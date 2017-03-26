@@ -19,10 +19,10 @@ class CountryController{
 
         // $categories and $products are both arrays with objects
 
-        render('category',array(
+        render('country',array(
             'title'		=> 'Browsing '.$cat[0]->name,
             'categories'	=> $categories,
-            'products'	=> $products
+            'products'	=> $countries
         ));
     }
 }

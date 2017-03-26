@@ -19,10 +19,10 @@ class GradeController{
 
         // $categories and $products are both arrays with objects
         //this whole thing needs to be fixed
-        render('grades',array(
+        render('grade',array(
             'title'		=> 'Browsing '.$cat[0]->name,
             'categories'	=> $categories,
-            'products'	=> $products
+            'products'	=> $grades
         ));
     }
 }
