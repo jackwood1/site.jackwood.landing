@@ -17,6 +17,10 @@ require_once "includes/controllers/category.controller.php";
 require_once "includes/controllers/grade.controller.php";
 require_once "includes/controllers/country.controller.php";
 
+use \Monolog\Logger;
+use \Monolog\Handler\StreamHandler;
+include '\Monolog\Logger.php';
+
 // This will allow the browser to cache the pages of the store.
 
 header('Cache-Control: max-age=3600, public');
