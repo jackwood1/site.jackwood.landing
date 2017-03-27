@@ -17,9 +17,19 @@ require_once "includes/controllers/category.controller.php";
 require_once "includes/controllers/grade.controller.php";
 require_once "includes/controllers/country.controller.php";
 
-use \Monolog\Logger;
-use \Monolog\Handler\StreamHandler;
-include '\Monolog\Logger.php';
+// Setup global logging
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Handler\FirePHPHandler;
+
+// Create the logger
+$logger = new Logger('my_logger');
+// Now add some handlers
+$logger->pushHandler(new StreamHandler(__DIR__.'/site.log', Logger::DEBUG));
+$logger->pushHandler(new FirePHPHandler());
+
+// You can now use your logger
+$logger->info('My logger is now ready');
 
 // This will allow the browser to cache the pages of the store.
 
