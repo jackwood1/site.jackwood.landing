@@ -33,8 +33,12 @@ $logger->info('My logger is now ready');
 
 // This will allow the browser to cache the pages of the store.
 
-header('Cache-Control: max-age=3600, public');
-header('Pragma: cache');
+//disable cache to help with debugging
+//header('Cache-Control: max-age=3600, public');
+//header('Pragma: cache');
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 header("Last-Modified: ".gmdate("D, d M Y H:i:s",time())." GMT");
 header("Expires: ".gmdate("D, d M Y H:i:s",time()+3600)." GMT");
 
